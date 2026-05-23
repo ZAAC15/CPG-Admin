@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="3.0" xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence
+                                 https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
+  <persistence-unit name="CPG_PU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>com.compensar.cpg1.model.entity.Pedido</class>
+    <class>com.compensar.cpg1.model.entity.DetallePedido</class>
+    <class>com.compensar.cpg1.model.entity.Producto</class>
+    <class>com.compensar.cpg1.model.entity.Cliente</class>
+    <class>com.compensar.cpg1.model.entity.Post</class>
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+    <properties>
+      <property name="jakarta.persistence.jdbc.driver"    value="org.postgresql.Driver"/>
+      <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://aws-1-us-west-1.pooler.supabase.com:6543/postgres?sslmode=require"/>
+      <property name="jakarta.persistence.jdbc.user"       value="postgres.vpxrzsdayfslvhtllqry"/>
+      <property name="jakarta.persistence.jdbc.password"   value="Li53101522#"/>
+      <property name="eclipselink.target-database"         value="PostgreSQL"/>
+      <property name="eclipselink.logging.level"           value="INFO"/>
+      <property name="eclipselink.logging.level.sql"       value="FINE"/>
+      <property name="eclipselink.logging.parameters"      value="true"/>
+      <property name="eclipselink.ddl-generation"          value="none"/>
+      <property name="eclipselink.weaving"                 value="false"/>
+    </properties>
+  </persistence-unit>
+</persistence>
