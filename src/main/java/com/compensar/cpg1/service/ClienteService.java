@@ -38,7 +38,7 @@ public class ClienteService {
 
     public ClienteDTO crear(ClienteDTO dto) {
         try {
-            // Llamar a Supabase Admin API para crear usuario en auth
+            // Llamada de supabas
             java.net.URL url = new java.net.URL("https://vpxrzsdayfslvhtllqry.supabase.co/auth/v1/admin/users");
             java.net.HttpURLConnection conn = (java.net.HttpURLConnection) url.openConnection();
             conn.setRequestMethod("POST");
@@ -59,7 +59,7 @@ public class ClienteService {
 
             conn.getOutputStream().write(body.getBytes("UTF-8"));
             int status = conn.getResponseCode();
-            // Leer respuesta para debug
+            // Debug
             java.io.InputStream is = status >= 400 ? conn.getErrorStream() : conn.getInputStream();
             if (is != null) {
                 String resp = new String(is.readAllBytes(), "UTF-8");

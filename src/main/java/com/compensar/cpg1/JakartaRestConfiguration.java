@@ -19,7 +19,7 @@ public class JakartaRestConfiguration extends Application {
         classes.add(com.compensar.cpg1.controller.SuscripcionController.class);
         classes.add(com.compensar.cpg1.controller.PostController.class);
 
-        // Jackson provider directo (sin JAXB)
+        // Jackson provider directo
         classes.add(JacksonContextResolver.class);
         classes.add(com.fasterxml.jackson.jakarta.rs.json.JacksonJsonProvider.class);
         return classes;

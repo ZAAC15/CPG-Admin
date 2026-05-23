@@ -45,7 +45,6 @@ public class PedidoService {
     }
 
     private PedidoDTO rowToDTO(Object[] row) {
-        // row: [id, user_id, total, descuento, created_at, nombre_cliente, cantidad_items]
         PedidoDTO dto = new PedidoDTO();
 
         String id = row[0] != null ? row[0].toString() : null;
@@ -60,7 +59,6 @@ public class PedidoService {
             dto.setTotal(new BigDecimal(totalObj.toString()));
         }
 
-        // created_at
         Object fechaObj = row[4];
         if (fechaObj instanceof Timestamp) {
             dto.setFechaPedido(((Timestamp) fechaObj).toLocalDateTime());
@@ -68,11 +66,9 @@ public class PedidoService {
             dto.setFechaPedido((LocalDateTime) fechaObj);
         }
 
-        // nombre_cliente
         String nombreCliente = row[5] != null ? row[5].toString().trim() : "";
         dto.setNombreCliente(nombreCliente.isEmpty() ? "Cliente" : nombreCliente);
 
-        // cantidad_items
         Object itemsObj = row[6];
         dto.setCantidadItems(itemsObj != null ? ((Number) itemsObj).intValue() : 0);
 

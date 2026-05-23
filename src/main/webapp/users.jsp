@@ -101,7 +101,7 @@
 
 </main>
 
-<!-- Modal agregar / editar usuario -->
+<!-- Modal agregar y editar usuario -->
 <div class="modal-overlay" id="modal-overlay">
   <div class="modal">
     <button class="close-modal" onclick="cerrarModal()">&#x2715;</button>

@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
-    /* estilos específicos de productos que no están en styles.css */
+    /* estilos específicos dpara prductos estos no estan en css */
     .prod-cell  { display:flex; align-items:center; gap:14px; }
     .prod-thumb { width:48px; height:48px; border-radius:8px; overflow:hidden; flex-shrink:0;
       background:var(--bg-hover); border:1px solid var(--border); }
@@ -108,7 +108,7 @@
 
 </main>
 
-<!-- Modal agregar / editar producto -->
+/* modal agregar y editar producto */
 <div class="modal-overlay" id="modal-overlay">
   <div class="modal">
     <button class="close-modal" onclick="cerrarModal()">&#x2715;</button>

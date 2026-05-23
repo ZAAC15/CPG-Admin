@@ -1,6 +1,6 @@
 const BASE = window.location.pathname.split('/').slice(0, 2).join('/') + '/api';
 
-/* ── UTILIDADES ── */
+/* UTILIDADES  */
 const COLORS = ['#3b82f6', '#8b5cf6', '#06b6d4', '#f59e0b', '#10b981', '#ef4444', '#f97316'];
 
 function colorFor(str) {
@@ -41,10 +41,10 @@ function animateValue(el, target) {
     })(start);
 }
 
-/* ── CARGA DE DATOS ── */
+/* CARGA DE DATOS */
 document.addEventListener('DOMContentLoaded', function () {
 
-    /* 1. Métricas del dashboard */
+    /* Métricas del dashboard */
     fetch(BASE + '/dashboard')
         .then(r => r.json())
         .then(d => {
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
         });
 
-    /* 2. Últimos 5 usuarios */
+    /* Últimos 5 usuarios */
     fetch(BASE + '/clientes')
         .then(r => r.json())
         .then(lista => {
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (cont) cont.innerHTML = '<div class="loading-msg">No se pudo conectar</div>';
         });
 
-    /* 3. Últimos 4 pedidos */
+    /* Últimos 4 pedidos */
     fetch(BASE + '/pedidos?recientes=4')
         .then(r => r.json())
         .then(lista => {
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (cont) cont.innerHTML = '<div class="loading-msg">No se pudo conectar</div>';
         });
 
-    /* ── TABS / FILTROS (para otras páginas) ── */
+    /* FILTROS */
     document.querySelectorAll('.tab-btn').forEach(function (btn) {
         btn.addEventListener('click', function () {
             const group = this.closest('.tab-group');
@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    /* ── BÚSQUEDA EN TABLA ── */
+    /*  BÚSQUEDA EN TABLA  */
     const searchInput = document.querySelector('.search-input');
     if (searchInput) {
         searchInput.addEventListener('input', function () {
@@ -148,7 +148,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    /* ── FADE-IN ESCALONADO filas tabla ── */
     document.querySelectorAll('.data-table tbody tr').forEach(function (row, i) {
         row.style.animationDelay = (0.04 * i) + 's';
         row.classList.add('fade-in');
